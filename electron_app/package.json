@@ -1,0 +1,46 @@
+{
+  "name": "Electron_App",
+  "productName": "Electron_App",
+  "description": "Electron_App",
+  "author": "",
+  "license": "MIT",
+  "version": "0.2.4",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "out": "npm run compile && electron-builder build --win --publish never"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "typescript": "^4.8.3",
+    "electron": "^20.1.4",
+    "electron-builder": "^23.3.3"
+  },
+  "dependencies": {
+    "@el3um4s/ipc-for-electron": "^1.0.7",
+    "@el3um4s/ipc-for-electron-system-info": "^2.0.4",
+    "electron-reload": "^1.5.0",
+    "electron-serve": "^1.1.0",
+    "electron-updater": "^5.2.1"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "directories": {
+      "output": "out"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "Electron_App",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
